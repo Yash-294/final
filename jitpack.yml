@@ -3,4 +3,4 @@ jdk:
 install:
   - ./gradlew clean build
 script:
-  - ./gradlew :library:publishReleasePublicationToMavenLocal
+  - ./gradlew :miniorange:publishReleasePublicationToMavenLocal
