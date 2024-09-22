@@ -48,7 +48,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("release") {
-            artifact("$buildDir/outputs/aar/${artifactId}-release.aar")
+            artifact("build/outputs/aar/miniorange-release.aar")
 
             groupId = "com.github.Yash-294"
             artifactId = "final"
