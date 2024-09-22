@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.andorid.miniorange"
+    namespace = "com.android.miniorange"
     compileSdk = 34
 
     defaultConfig {
