@@ -34,6 +34,7 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
+
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -45,24 +46,27 @@ dependencies {
     api("org.bouncycastle:bcprov-jdk15on:1.70")
 
 }
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            artifact("build/outputs/aar/miniorange-release.aar")
 
-            groupId = "com.github.Yash-294"
-            artifactId = "final"
-            version = "1.0"
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+//                artifact("build/outputs/aar/miniorange-release.aar")
 
-            // Include dependencies in the POM file
-            pom {
-                withXml {
-                    asNode().appendNode("dependencies").apply {
-                        configurations.implementation.get().dependencies.forEach { dep ->
-                            appendNode("dependency").apply {
-                                appendNode("groupId", dep.group)
-                                appendNode("artifactId", dep.name)
-                                appendNode("version", dep.version)
+                groupId = "com.github.Yash-294"
+                artifactId = "final"
+                version = "1.0"
+
+                // Include dependencies in the POM file
+                pom {
+                    withXml {
+                        asNode().appendNode("dependencies").apply {
+                            configurations.implementation.get().dependencies.forEach { dep ->
+                                appendNode("dependency").apply {
+                                    appendNode("groupId", dep.group)
+                                    appendNode("artifactId", dep.name)
+                                    appendNode("version", dep.version)
+                                }
                             }
                         }
                     }
