@@ -51,7 +51,7 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-//                artifact("build/outputs/aar/miniorange-release.aar")
+                artifact("$buildDir/outputs/aar/miniorange-release.aar")
 
                 groupId = "com.github.Yash-294"
                 artifactId = "final"
