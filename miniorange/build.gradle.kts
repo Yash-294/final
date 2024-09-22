@@ -55,7 +55,7 @@ afterEvaluate {
 
                 groupId = "com.github.Yash-294"
                 artifactId = "final"
-                version = "1.0"
+                version = "2.1"
 
                 // Include dependencies in the POM file
                 pom {
