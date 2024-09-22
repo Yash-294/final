@@ -55,7 +55,7 @@ afterEvaluate {
 
                 groupId = "com.github.Yash-294"
                 artifactId = "final"
-                version = "2.1"
+                version = "2.2"
 
                 // Include dependencies in the POM file
                 pom {
@@ -73,5 +73,8 @@ afterEvaluate {
                 }
             }
         }
+    }
+    tasks.named("publishReleasePublicationToMavenLocal") {
+        dependsOn(tasks.named("bundleReleaseAar"))
     }
 }
